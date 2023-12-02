@@ -1,0 +1,9 @@
+<!-- app/views/categories/index.html.erb -->
+<h1>Categories#index view</h1>
+
+<% if user_signed_in? %>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Edit registration", edit_user_registration_path %>
+<% end %>
+
+<% debugger %>
