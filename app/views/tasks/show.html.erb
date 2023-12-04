@@ -1,0 +1,10 @@
+<!-- app/views/tasks/show.html.erb -->
+<% if @task %>
+  <h1><%= @task.name %></h1>
+  <p><strong>Description:</strong> <%= @task.description %></p>
+  <!-- Add more details as needed -->
+  <%= link_to 'Edit Task', edit_category_task_path(@category, @task) %>
+  <%= button_to 'Delete Task', category_task_path(@category, @task), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <p>Task not found</p>
+<% end %>

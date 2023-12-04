@@ -1,0 +1,17 @@
+<%= form_with(model: [@category, @task], url: category_task_path(@category, @task), local: true, method: :patch, scope: 'task') do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <!-- Add more fields as needed -->
+
+  <div class="actions">
+    <%= form.submit 'Update Task' %>
+  </div>
+<% end %>

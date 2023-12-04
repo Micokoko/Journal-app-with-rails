@@ -1,0 +1,23 @@
+<!-- app/views/tasks/new.html.erb -->
+<% if flash.now[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash.now[:alert] %>
+  </div>
+<% end %>
+
+<%= form_with(model: [@category, Task.new], url: category_tasks_path(@category), local: true, scope: 'task') do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Task' %>
+    <%= link_to 'Back', category_path(@category), class: 'btn btn-secondary' %>
+  </div>
+<% end %>

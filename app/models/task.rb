@@ -1,5 +1,6 @@
+# app/models/task.rb
 class Task < ApplicationRecord
-    validates :name, :due_date, presence: true
-    belongs_to :category
-  end
-  
+  belongs_to :category, optional: false
+  validates :name, presence: true
+  validates :description, presence: true
+end
