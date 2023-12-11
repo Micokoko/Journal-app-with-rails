@@ -4,7 +4,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true, presence: true
+  validates :username, uniqueness: true, presence: true  
 
-  has_many :categories  # Add this line
+  has_many :categories
   has_many :tasks, through: :categories
 end

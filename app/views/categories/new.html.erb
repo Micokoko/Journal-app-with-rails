@@ -1,7 +1,9 @@
+<div class="container is-flex is-justify-content-center is-align-items-center">
+  <div class="box">
+    <h1 class="title">New Journal</h1>
 
-<!-- app/views/categories/new.html.erb -->
-<h1>New Category</h1>
+    <%= render 'form', category: Category.new %>
 
-<%= render 'form', category: Category.new %>
-
-<%= link_to 'Back to Categories', categories_path %>
+    <%= link_to 'Back to Journals', categories_path, class: "button is-primary" %>
+  </div>
+</div>

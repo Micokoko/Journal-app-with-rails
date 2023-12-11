@@ -1,26 +1,43 @@
-<h2>Log in</h2>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="box p-6">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <h2 class="title is-2 mt-4">Log in</h2>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'mt-4' }) do |f| %>
+          <div class="field">
+            <%= f.label :email, class: "label" %><br />
+            <div class="control">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+            </div>
+          </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <div class="field">
+            <%= f.label :password, class: "label" %><br />
+            <div class="control">
+              <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <div class="control">
+                <%= f.check_box :remember_me, class: "checkbox" %>
+                <%= f.label :remember_me, class: "checkbox" %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <div class="control">
+              <%= f.submit "Log in", class: "button is-success" %>
+            </div>
+          </div>
+        <% end %>
+
+        <%= render "users/shared/links" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</section>

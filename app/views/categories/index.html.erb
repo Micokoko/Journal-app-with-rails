@@ -1,20 +1,39 @@
 <!-- app/views/categories/index.html.erb -->
-<h1>Categories#index view</h1>
+<div class="container">
+  <div class="my-custom-container is-primary">
+    <div class="columns is-centered">
+      <div class="column is-half">
+      <h1 class="title is-1 has-text-centered">DASHBOARD</h1>
 
-<% if user_signed_in? %>
-  <p>Welcome, <%= current_user.email %></p>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-  <%= link_to "Edit registration", edit_user_registration_path %>
+      <% if user_signed_in? %>
+        <p class="has-text-centered">Welcome, <%= current_user.username %>!</p>
 
-  <h1>Your Categories</h1>
+        <h2 class="title is-2 has-text-centered">Your Journals</h2>
 
-  <ul>
-    <% @categories.each do |category| %>
-      <li>
-        <%= link_to category.name, category %>
-      </li>
-    <% end %>
-  </ul>
+        <table class="table is-striped is-fullwidth">
+          <thead>
+            <tr>
+              <th>Journal</th>
+              <th>Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td><%= link_to category.name, category %></td>
+                <td>
+                  <% category.tasks.limit(3).each do |task| %>
+                    <%= content_tag :p, task.name %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <%= link_to 'New Category', new_category_path %>
-<% end %>
+        <%= link_to 'New Journal', new_category_path, class: "button is-primary is-small" %>
+      <% end %>
+     </div>
+    </div>
+  </div>
+</div>

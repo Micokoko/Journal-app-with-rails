@@ -1,14 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 
-<% if user_signed_in? %>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
-  <%= link_to "Edit registration", edit_user_registration_path %>
-<% else %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= button_to 'Sign in', new_user_session_path %>
-<% end %>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="box p-6">
+        <h1 class="title">MindJot</h1>
+        <p class="subtitle">Your Daily Companion for Inspired Living</p>
+
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "button is-danger" %>
+          <%= link_to "Edit registration", edit_user_registration_path, class: "button is-link" %>
+        <% else %> 
+        <%= button_to 'Sign in', new_user_session_path, class: "button is-success" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 

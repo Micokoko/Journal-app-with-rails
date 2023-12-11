@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ @import "bulma";
+
+ /* Existing styles */
+ 
+ body {
+  margin: 0;
+  padding: 0;
+}
+
+ 
+ /* Hero styles */
+ .hero.is-primary {
+   background-color: #7F5283;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+ 
+   .hero-body {
+     margin: 0;
+   }
+ 
+   .title {
+     color: black;
+     display: flex;
+     align-items: center;
+     font-size: 2rem;
+     width: 100%;
+ 
+     .logo-icon {
+       margin-right: 10px;
+     }
+   }
+ }
+ 
+ /* Full-height section with background color */
+ .hero.is-fullheight {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   padding-bottom: 450px;
+ }
+
+ 
+ 
+ /* Center content horizontally */
+ .container.has-text-centered {
+   text-align: center;
+ }
+ 
+ /* Custom container styles */
+ .my-custom-container {
+   margin: 20px;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #FEFBF6;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+   .has-text-centered {
+     text-align: center;
+   }
+ 
+   .title {
+     color: #333;
+     font-size: 24px;
+   }
+ }
+ 
+ /* Label styles */
+ .label {
+   color: #3D3C42;
+ }
+ 
+ /* Box styles */
+ .box {
+   background-color: #FEFBF6;
+   color: #3D3C42;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   width: 600px;
+ }
+ 
+ /* Typography styles */
+ .title {
+   color: #3D3C42;
+ }
+ 
+ .subtitle {
+   color: #3D3C42;
+ }
+ 
+ /* Apply padding to the box */
+ .p-6 {
+   padding: 1.5rem;
+ }
+ 
+ /* Button styles */
+ .button {
+   margin-top: 1rem;
+ }
+ 
+ /* Customize button colors */
+ .title {
+   color: black;
+ }
+ 
+ /* Category buttons styles */
+ .CategoryButtons {
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: 15px;
+   align-items: center;
+ }
+ 
+ .CategoryButtons a,
+ .CategoryButtons form {
+   margin-right: 10px;
+ }
+ 
+ /* Inner table styles */
+ .InnerTable {
+   display: flex;
+   justify-content: left;
+ }
+
+ .table{
+  background-color: #FEFBF6;
+ }
+
+ .titleTasks{
+  font-weight: 600;
+  font-size: 1.8rem;
+ }
+
+ .container is-justify-content-center is-align-items-center {
+  background-color: #FEFBF6;
+ }
+
+ .NewCategory{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+ }
+

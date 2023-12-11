@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JournalAppV2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+<head>
+  <title>JournalAppV2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <h1>MindJot</h1>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <p class="title">
+              <img src="<%= image_path('BRAINLOGO.png') %>" alt="Logo" class="logo-icon" width="50"> MindJot
+            </p>
+          </div>
+          <div class="column is-narrow">
+            <% if user_signed_in? %>
+              <div class="buttons is-right">
+                <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-danger is-light is-small" %>
+                <%= link_to "Edit registration", edit_user_registration_path, class: "button is-info is-light is-small" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%= yield %>
+</body>
+
 </html>

@@ -1,6 +1,9 @@
-<!-- app/views/categories/edit.html.erb -->
-<h1>Edit Category</h1>
+<div class="container is-flex is-align-items-center is-justify-content-center">
+  <div class="box">
+    <h1 class="title">Edit Journal</h1>
 
-<%= render 'form', category: @category %>
+    <%= render 'form', category: @category %>
 
-<%= link_to 'Back', categories_path %>
+    <%= link_to 'Back', categories_path, class: "button is-link" %>
+  </div>
+</div>
