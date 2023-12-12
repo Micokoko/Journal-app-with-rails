@@ -2,11 +2,16 @@
 require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
-  test "can create task with name, category, and description" do
+  test "can create task with name, category, description, and due_date" do
     category = Category.create(name: "Example Category")
     
     assert_difference('Task.count') do
-      task = Task.create(name: "Example Task", category: category, description: "Task description")
+      task = Task.create(
+        name: "Example Task",
+        category: category,
+        description: "Task description",
+        due_date: Date.today 
+      )
       assert task.valid?, "Task should be valid. Errors: #{task.errors.full_messages.to_sentence}"
     end
   end

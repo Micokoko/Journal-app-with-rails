@@ -8,8 +8,8 @@
         <p class="subtitle">Your Daily Companion for Inspired Living</p>
 
         <% if user_signed_in? %>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "button is-danger" %>
-          <%= link_to "Edit registration", edit_user_registration_path, class: "button is-link" %>
+          <h1>Welcome, <%= current_user.username %>!</h1>
+         <%= link_to "DASHBOARD", categories_path, class: "button is-link" %>
         <% else %> 
         <%= button_to 'Sign in', new_user_session_path, class: "button is-success" %>
           <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
